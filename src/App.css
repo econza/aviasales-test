@@ -2,6 +2,7 @@
 .flexContainer {
   display: flex;
   background-color: #F3F7FA;
+  min-height: 100vh;
   /* background-size: cover; */
   flex-direction: column;
   align-items: center;
@@ -23,6 +24,7 @@
 .mainWrapper {
   display: flex;
   background-color: #ffffff;
+
   border: solid;
   justify-content: center;
 }
