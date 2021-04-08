@@ -1,23 +1,32 @@
 import logo from './logo.svg';
+import logoImg from "./assets/images/Logo.png";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="flexContainer">
+
+      <header className="headerWrapper">
+        <img src={logoImg}></img>
       </header>
+
+      <div className="mainWrapper">
+        <div>Количество пересадок ФИЛЬТР </div>
+        <div className="ticketsWrapper">
+          <div className="ticketsButtonWrapper">
+            <div>САМЫЙ ДЕШЕВЫЙ</div>
+            <div>САМЫЙ БЫСТРЫЙ</div>
+            <div>ОПТИМАЛЬЫНЙ</div>
+          </div>
+          <div>
+            <div>Билет 1</div>
+            <div>Билет 2</div>
+            <div>Билет 3</div>
+          </div>
+          <div>КНОПКА ЕЩЕ</div>
+        </div>
+      </div>
+
     </div>
   );
 }
