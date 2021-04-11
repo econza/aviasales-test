@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 .flexContainer {
   display: flex;
   background-color: #F3F7FA;
@@ -19,6 +21,7 @@
 
 .mainWrapper {
   display: flex;
+  align-items: flex-start;
 }
 
 .ticketsWrapper {
@@ -29,10 +32,12 @@
 
 .filterBox {
   margin: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 6px -3px rgba(34, 60, 80, 0.6);
   background-color: #ffff;
   border-radius: 5px;
   padding: 15px;
+  display: flex;
+  flex-flow: column;
 }
 
 .ticketsButtonWrapper {
@@ -40,21 +45,19 @@
   background-color: #ffff;
   border: 1px solid #DFE5EC;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-transform: uppercase;
   color: #4A4A4A;
   font-family: 'Open Sans';
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.5px;
-  /* width: 502px;
-  flex-grow: 1 1 1; */
-
-
 }
 
 .ticketsButtonWrapper div {
   padding: 15px;
+  flex-grow: 1;
+  display: flex; justify-content: center; align-items: center;
 }
 
 .ticketsButtonWrapper div:first-child {
@@ -79,10 +82,10 @@
 }
 
 .ticketContainer {
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0px 7px 10px -3px rgba(34, 60, 80, 0.6);
   background-color: #ffff;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   padding: 15px;
 
   display: flex;
@@ -123,6 +126,29 @@
   margin-top: 15px;
 }
 
+.price {
+  text-transform: uppercase;
+  color: #2196F3;
+  font-family: 'Open Sans';
+  font-size: 24px;
+  font-weight: 600;
+}
+.sideItems .item {
+  text-transform: uppercase;
+  color: #A0B0B9;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.sideItems2 .item {
+  color: #4A4A4A;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .sideItems, .sideItems2{
   flex-basis: 125px;
   flex-shrink:0;
@@ -135,8 +161,14 @@
   margin-bottom: 10px;
 }
 
+.sideItems{
+  margin-bottom: 5px;
+}
+
 .item{
   flex-basis:50%;
   min-width:166px;
   margin-left:10px;
 }
+
+
