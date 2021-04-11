@@ -1,4 +1,4 @@
-export const tickets = {
+export const data = {
     tickets: [{
         price: 34008,
         carrier: "S7",

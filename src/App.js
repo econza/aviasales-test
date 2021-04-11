@@ -1,22 +1,18 @@
 import './App.css';
 import Header from "./components/Header/Header.js";
 import FilterBox from "./components/FilterBox/FilterBox";
-import TicketsButton from "./components/TicketsButton/TicketsButton";
-import Tickets from "./components/Tickets/Tickets";
-import ButtonShowMore from './components/ButtonShowMore/ButtonShowMore';
+import {data} from "./tickets";
+import TicketsBox from './components/MainBox/MainBox';
 
 
 function App() {
+  console.log(data)
   return (
     <div className="flexContainer">
       <Header />
       <div className="mainWrapper">
         <FilterBox />
-        <div className="ticketsWrapper">
-          <TicketsButton />
-          <Tickets />
-          <ButtonShowMore />
-        </div>
+        <TicketsBox />
       </div>
     </div>
   );
