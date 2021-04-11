@@ -1,0 +1,17 @@
+redis:
+    image: redis
+    container_name: cache
+    expose:
+      - 6379
+backend:
+    build: ./backend
+    volumes:
+      - ./:/var/www/app
+    links:
+      - redis
+    ports:
+      - 4000:4000
+    environment:
+      - REDIS_URL=redis://cache
+      - NODE_ENV=development
+      - PORT=4000
