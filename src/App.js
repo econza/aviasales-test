@@ -1,12 +1,15 @@
+import * as React from 'react'
+
 import './App.css';
 import Header from "./components/Header/Header.js";
 import FilterBox from "./components/FilterBox/FilterBox";
-import {data} from "./tickets";
-import TicketsBox from './components/MainBox/MainBox';
+import TicketsBox from './components/TicketsBox/TicketsBox';
 
 
 function App() {
-  console.log(data)
+  React.useEffect(() => {
+    fetch('/api/tickets')
+  }, [])
   return (
     <div className="flexContainer">
       <Header />
