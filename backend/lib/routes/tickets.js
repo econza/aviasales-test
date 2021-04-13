@@ -20,7 +20,10 @@ module.exports = async function (req, res) {
 				params: { searchId }
 			});
 
-            res.send(data)
+            res.send({
+				...data,
+				tickets: data.tickets.filter((item, index) => index < 25)
+			})
 		}
 	} catch (err) {
 		console.error('[API: searchId] error', err.message);
