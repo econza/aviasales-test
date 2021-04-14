@@ -3,7 +3,6 @@ import { createStore, combineReducers } from "redux";
 import ticketsReducer from "../tickets-reducer";
 
 let reducers = combineReducers({
-
   mainState: ticketsReducer
 });
 
