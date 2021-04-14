@@ -7,14 +7,6 @@ import { useSelector } from "react-redux";
 
 
 function App() {
-
-  const state = useSelector(state => state)
-
-  console.log("ok", state)
-
-  React.useEffect(() => {
-    fetch('/api/tickets')
-  }, [])
   return (
     <div className="flexContainer">
       <Header />
