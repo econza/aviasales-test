@@ -29,6 +29,11 @@ module.exports.set = (key, value, expTime = 60 * 60) => {
   return 'done';
 }
 
+module.exports.del = (key) => {
+  client.del(key, redis.print);
+  return 'done';
+}
+
 module.exports.get = (key) => {
   return new Promise((resolve, reject) => {
     client.get(key, function (error, result) {
