@@ -7,18 +7,18 @@ let initialState = {
 };
 
 const ticketsReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case SET_TICKETS: 
-        return {...state, tickets: action.tickets}
-    default:
-        return state;
-  }
+    switch (action.type) {
+        case SET_TICKETS:
+            return { ...state, tickets: action.tickets }
+        default:
+            return state;
+    }
 };
 
 export const setTickets = (tickets) => {
-  return {
-    type: SET_TICKETS, tickets
-  };
+    return {
+        type: SET_TICKETS, tickets
+    };
 };
 
 
@@ -352,7 +352,7 @@ export const data = {
     }, {
         price: 26243,
 
-carrier: "EY",
+        carrier: "EY",
         segments: [{
             origin: "MOW",
             destination: "HKT",
