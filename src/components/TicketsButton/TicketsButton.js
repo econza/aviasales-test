@@ -15,7 +15,7 @@ const TicketsButton = () => {
         <div className={styles.ticketsButtonWrapper}>
             <div onClick={() => handleSort('byPrice')} tabindex="1">самый дешевый</div>
             <div onClick={() => handleSort('byLength')} tabindex="2">самый быстрый</div>
-            <div tabindex="3">оптимальный</div>
+            <div onClick={() => handleSort('')} tabindex="3">оптимальный</div>
         </div>);
 }
 

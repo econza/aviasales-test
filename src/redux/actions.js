@@ -1,10 +1,10 @@
-export const SET_TICKETS = "@tickets/SET_TICKETS";
-export const SET_FILTER = "@tickets/SET_FILTER";
-export const SORT_LOWEST_PRICE = "@tickets/SORT_LOWEST_PRICE";
+export const SET_TICKETS = "@main/SET_TICKETS";
+export const SET_SHOW_COUNT = "@main/SET_SHOW_COUNT"
 
 export const SET_SORTING = "@filters/SET_SORTING"
 
 
+// @main
 
 export const setTickets = (tickets) => {
     const newTickets = tickets.map((ticket) => {
@@ -19,17 +19,14 @@ export const setTickets = (tickets) => {
     };
 };
 
-export const sortLowestPrice = () => {
+export const setShowCount = (count) => {
     return {
-        type: SORT_LOWEST_PRICE
+        type: SET_SHOW_COUNT,
+        count
     }
 }
 
-export const setFilter = (filter) => {
-    return {
-        type: SET_FILTER, filter
-    };
-};
+// @filters
 
 export const setSorting = (sortingType) => {
     return {

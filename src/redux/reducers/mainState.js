@@ -1,7 +1,8 @@
-import { SET_TICKETS, SORT_LOWEST_PRICE } from '../actions'
+import { SET_TICKETS, SET_SHOW_COUNT } from '../actions'
 
 let initialState = {
-    tickets: []
+    tickets: [],
+    showCount: 5
 };
 
 const ticketsState = (state = initialState, action) => {
@@ -11,10 +12,10 @@ const ticketsState = (state = initialState, action) => {
                 ...state, 
                 tickets: action.tickets 
             };
-        case SORT_LOWEST_PRICE :
+        case SET_SHOW_COUNT:
             return {
                 ...state,
-                tickets: state.tickets.sort((a, b) => a.price - b.price)
+                showCount: action.count
             }
         default:
             return state;
