@@ -40,34 +40,6 @@
   flex-flow: column;
 }
 
-.ticketsButtonWrapper {
-  display: flex;
-  background-color: #ffff;
-  border: 1px solid #DFE5EC;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  color: #4A4A4A;
-  font-family: 'Open Sans';
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.ticketsButtonWrapper div {
-  padding: 15px;
-  flex-grow: 1;
-  display: flex; justify-content: center; align-items: center;
-}
-
-.ticketsButtonWrapper div:first-child {
-  border-right: 1px solid #DFE5EC;
-}
-
-.ticketsButtonWrapper div:last-child {
-  border-left: 1px solid #DFE5EC;
-}
-
 .filterBox div {
   margin-bottom: 20px;
 }

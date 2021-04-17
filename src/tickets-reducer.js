@@ -1,5 +1,7 @@
 
 const SET_TICKETS = "SET_TICKETS";
+const SET_FILTER = "SET_FILTER";
+const SORT_LOWEST_PRICE = "SORT_LOWEST_PRICE";
 
 
 let initialState = {
@@ -9,11 +11,36 @@ let initialState = {
 const ticketsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_TICKETS:
-            return { ...state, tickets: action.tickets }
+            return { 
+                ...state, 
+                tickets: action.tickets 
+            };
+        case SET_FILTER:
+            return {
+                ...state,
+                setFilter: action.filter,
+            };
+        case SORT_LOWEST_PRICE :
+            return {
+                ...state,
+                tickets: state.tickets.sort((a, b) => a.price - b.price)
+            }
         default:
             return state;
-    }
+    };
 };
+
+    // Стефан Бурмистров, [16 апр. 2021 г., 19: 55: 12]:
+    // arr.filter(item => item > 5)
+
+    // const arr = [1, 2, 3, , 4, 5, 6, 7]
+
+    // const newArr = arr.filter(item => item > 5)
+
+    // console.log(newArr)// [6, 7]
+
+
+
 
 export const setTickets = (tickets) => {
     return {
@@ -21,6 +48,17 @@ export const setTickets = (tickets) => {
     };
 };
 
+export const sortLowestPrice = () => {
+    return {
+        type: SORT_LOWEST_PRICE
+    }
+}
+
+export const setFilter = (filter) => {
+    return {
+        type: SET_FILTER, filter
+    };
+};
 
 export default ticketsReducer;
 

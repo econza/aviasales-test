@@ -1,11 +1,21 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { sortLowestPrice } from "../../tickets-reducer";
 
-const TicketsButton = () => {
+import styles from './TicketsButton.module.css'
+
+const TicketsButton = (props) => {
+    const dispatch = useDispatch()
+
+    const handleSortByLowers = () => {
+        return dispatch(sortLowestPrice())
+    }
+
     return (
-        <div className="ticketsButtonWrapper">
-            <div>самый дешевый</div>
-            <div>самый быстрый</div>
-            <div>оптимальный</div>
+        <div className={styles.ticketsButtonWrapper}>
+            <div onClick={handleSortByLowers} tabindex="1">самый дешевый</div>
+            <div tabindex="2">самый быстрый</div>
+            <div tabindex="3">оптимальный</div>
         </div>);
 }
 

@@ -14,7 +14,7 @@ const TicketsBox = () => {
   const mainState = useSelector((state) => state.mainState);
   const dispatch = useDispatch();
 
-console.log(mainState, "MAIN")
+  console.log(mainState, "MAIN")
 
   useEffect(() => {
     fetch("/api/tickets")
@@ -22,9 +22,11 @@ console.log(mainState, "MAIN")
       .then((resData) => dispatch(setTickets(resData.tickets)));
   }, [])
 
-  return (
+    return (
     <div className="ticketsWrapper">
+
       <TicketsButton />
+
       {mainState.tickets && mainState.tickets.map((ticket, id) => {
         return (
           <Ticket

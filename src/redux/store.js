@@ -1,4 +1,5 @@
 import { createStore, combineReducers } from "redux";
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import ticketsReducer from "../tickets-reducer";
 
@@ -8,7 +9,8 @@ let reducers = combineReducers({
 });
 
 let store = createStore(
-  reducers
+  reducers,
+  composeWithDevTools()
 );
 
 export default store;
