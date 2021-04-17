@@ -12,3 +12,13 @@ export function pluralizeStop(x) {
             return "";
     }
 };
+
+export function setValue(obj, path, value) {
+    var ref = obj;
+
+    path.split('.').forEach(function (key, index, arr) {
+        ref = ref[key] = index === arr.length - 1 ? value : {};
+    });
+
+    return obj;
+}

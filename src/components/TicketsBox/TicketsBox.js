@@ -5,16 +5,28 @@ import TicketsButton from "../TicketsButton/TicketsButton";
 // import { data } from "../../tickets"
 import store from "../../redux/store"
 import { useDispatch, useSelector } from "react-redux";
-import { data, setTickets } from "../../tickets-reducer";
+import { setTickets } from "../../redux/actions";
 
+const sortTickets = (tickets, sorting) => {
+  switch(sorting) {
+    case "byPrice":
+      return tickets.sort((a, b) => a.price - b.price)
 
+    case "byLength":
+      return tickets.sort((a, b) => a.durationSum - b.durationSum)
+
+    default:
+      return tickets
+  }
+}
 
 const TicketsBox = () => {
 
   const mainState = useSelector((state) => state.mainState);
+  const sorting = useSelector((state) => state.filtersState.sorting)
   const dispatch = useDispatch();
 
-  console.log(mainState, "MAIN")
+  console.log(sorting, "MAIN")
 
   useEffect(() => {
     fetch("/api/tickets")
@@ -27,7 +39,7 @@ const TicketsBox = () => {
 
       <TicketsButton />
 
-      {mainState.tickets && mainState.tickets.map((ticket, id) => {
+      {mainState.tickets && sortTickets(mainState.tickets, sorting).map((ticket, id) => {
         return (
           <Ticket
             key={id}
