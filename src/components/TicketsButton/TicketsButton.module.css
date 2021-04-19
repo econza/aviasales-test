@@ -1,0 +1,49 @@
+.ticketsButtonWrapper {
+    display: flex;
+    background-color: #ffff;
+    border: 1px solid #DFE5EC;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #4A4A4A;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.ticketsButtonWrapper div:focus {
+    background-color: #2196F3;
+
+    color: #ffff;
+    outline: none;
+}
+
+.ticketsButtonWrapper div:first-child:focus {
+    border-right: 1px solid #DFE5EC;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.ticketsButtonWrapper div:last-child:focus {
+    border-right: 1px solid #DFE5EC;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.ticketsButtonWrapper div {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ticketsButtonWrapper div:first-child {
+    border-right: 1px solid #DFE5EC;
+}
+
+.ticketsButtonWrapper div:last-child {
+    border-left: 1px solid #DFE5EC;
+}
