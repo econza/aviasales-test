@@ -1,11 +1,12 @@
 import { createStore, combineReducers } from "redux";
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import ticketsReducer from "../tickets-reducer";
+import mainState from "../redux/reducers/mainState"
+import filtersReducer from "../redux/reducers/filtersState"
 
 let reducers = combineReducers({
-
-  mainState: ticketsReducer
+  mainState: mainState,
+  filtersState: filtersReducer
 });
 
 let store = createStore(
