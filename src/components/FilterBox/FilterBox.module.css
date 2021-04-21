@@ -1,3 +1,49 @@
+.filterBox {
+    margin-top: 10px;
+    box-shadow: 0px 0px 6px -3px rgba(34, 60, 80, 0.6);
+    background-color: #ffff;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    margin-right: 20px;
+  }
+  
+  .filterBox div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left:20px;
+    padding-right: auto;
+  }
+  
+  .filterBox div:hover {
+    background-color: #F1FCFF;
+    cursor: pointer;
+    background-size: contain;
+  }
+  
+  .filterBox span {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left:20px;
+    padding-right: 40px;
+  }
+  
+  .filterBox div:last-child {
+    margin-bottom: 20px;
+  }
+  
+  .filterName {
+    text-transform: uppercase;
+    color: #4A4A4A;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+
+
+
 .customCheckbox {
     position: absolute;
     z-index: -1;

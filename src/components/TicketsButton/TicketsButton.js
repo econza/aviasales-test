@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { setSorting } from "../../redux/actions";
-
 import styles from './TicketsButton.module.css'
 
 const TicketsButton = () => {

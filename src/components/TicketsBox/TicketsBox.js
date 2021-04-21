@@ -6,6 +6,8 @@ import TicketsButton from '../TicketsButton/TicketsButton';
 import store from '../../redux/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTickets } from '../../redux/actions';
+import style from "./TicketsBox.module.css"
+
 
 const sortTickets = (tickets, sorting) => {
 	switch (sorting) {
@@ -42,7 +44,7 @@ const TicketsBox = () => {
 	}, []);
 
 	return (
-		<div className="ticketsWrapper">
+		<div className={style.ticketsWrapper}>
 			<TicketsButton />
 
 			{mainState.tickets && formatTickets(mainState.tickets).map((ticket, id) => {

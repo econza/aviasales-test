@@ -1,0 +1,37 @@
+.sideItems .item {
+  text-transform: uppercase;
+  color: #A0B0B9;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.sideItems2 .item {
+  color: #4A4A4A;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sideItems, .sideItems2{
+  flex-basis: 125px;
+  flex-shrink:0;
+
+  display:flex;
+  flex-direction: row;
+}
+
+.sideItems2{
+  margin-bottom: 10px;
+}
+
+.sideItems{
+  margin-bottom: 5px;
+}
+
+.item{
+  flex-basis:50%;
+  min-width:166px;
+  margin-left:10px;
+}
