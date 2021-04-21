@@ -3,8 +3,8 @@ import style from "./FilterBox.module.css"
 
 const FilterBox = () => {
     return (
-        <div className="filterBox">
-            <span className="filterName">Количество пересадок </span>
+        <div className={style.filterBox}>
+            <span className={style.filterName}>Количество пересадок </span>
             <div className="ui checkbox">
                 <input type="checkbox" className={style.customCheckbox} id="check1" name="happy" value="yes" />
                 <label for="check1">Все</label>
