@@ -1,9 +1,16 @@
-import { SET_SORTING } from '../actions'
+import { SET_SORTING, SET_FILTERS } from '../actions'
 import { setValue } from '../../utils/helpers'
 
 let initialState = {
     sorting: "",
-    filters: []
+    filters: {
+        "-1": true,
+        "0": true,
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+    }
 };
 
 const filtersState = (state = initialState, action) => {
@@ -13,6 +20,11 @@ const filtersState = (state = initialState, action) => {
                 ...state, 
                 sorting: action.sortingType
             };
+        case SET_FILTERS:
+            return {
+                ...state,
+                filters: action.filters
+            }
         default:
             return state;
     };
