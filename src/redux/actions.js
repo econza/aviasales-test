@@ -2,6 +2,7 @@ export const SET_TICKETS = "@main/SET_TICKETS";
 export const SET_SHOW_COUNT = "@main/SET_SHOW_COUNT"
 
 export const SET_SORTING = "@filters/SET_SORTING"
+export const SET_FILTERS = "@filters/SET_FILTERS"
 
 
 // @main
@@ -10,7 +11,8 @@ export const setTickets = (tickets) => {
     const newTickets = tickets.map((ticket) => {
         return {
             ...ticket,
-            durationSum: ticket.segments.reduce((a, b) => a.duration + b.duration)
+            durationSum: ticket.segments.reduce((a, b) => a.duration + b.duration),
+            stopsSum: ticket.segments.reduce((a, b) => a.stops.length + b.stops.length)
         }
     })
 
@@ -31,6 +33,14 @@ export const setShowCount = (count) => {
 
 export const setSorting = (sortingType) => {
     return {
-        type: SET_SORTING, sortingType
+        type: SET_SORTING, 
+        sortingType
+    }
+}
+
+export const setFilters = (filters) => {
+    return {
+        type: SET_FILTERS,
+        filters
     }
 }

@@ -22,3 +22,20 @@ export function setValue(obj, path, value) {
 
     return obj;
 }
+
+export const sortTickets = (tickets, sorting) => {
+	switch (sorting) {
+		case 'byPrice':
+			return tickets.sort((a, b) => a.price - b.price);
+
+		case 'byLength':
+			return tickets.sort((a, b) => a.durationSum - b.durationSum);
+
+		default:
+			return tickets;
+	}
+};
+
+export const filterTicketsByCount = (tickets, count) => {
+    tickets.filter((_, index) => index < count)
+}

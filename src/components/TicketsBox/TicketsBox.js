@@ -7,33 +7,14 @@ import store from '../../redux/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTickets } from '../../redux/actions';
 import style from "./TicketsBox.module.css"
-
-
-const sortTickets = (tickets, sorting) => {
-	switch (sorting) {
-		case 'byPrice':
-			return tickets.sort((a, b) => a.price - b.price);
-
-		case 'byLength':
-			return tickets.sort((a, b) => a.durationSum - b.durationSum);
-
-		default:
-			return tickets;
-	}
-};
+import { visibleTickets } from '../../redux/selectors'
 
 const TicketsBox = () => {
-	const mainState = useSelector((state) => state.mainState);
 	const sorting = useSelector((state) => state.filtersState.sorting);
-  const showCount = useSelector((state) => state.mainState.showCount)
+  	const showCount = useSelector((state) => state.mainState.showCount);
+	const tickets = useSelector(visibleTickets)
 
 	const dispatch = useDispatch();
-
-  const formatTickets = (tickets) => {
-    const visibleTickets = tickets.filter((_, index) => index < showCount)
-
-    return sortTickets(visibleTickets, sorting)
-  }
 
 	console.log(sorting, 'MAIN');
 
@@ -47,7 +28,7 @@ const TicketsBox = () => {
 		<div className={style.ticketsWrapper}>
 			<TicketsButton />
 
-			{mainState.tickets && formatTickets(mainState.tickets).map((ticket, id) => {
+			{tickets.map((ticket, id) => {
 					return <Ticket key={id} price={ticket.price} carrier={ticket.carrier} segments={ticket.segments} />;
 				})}
 			<ButtonShowMore />
