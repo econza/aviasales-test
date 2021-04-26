@@ -31,7 +31,7 @@ const FilterBox = () => {
 	return (
 		<div className={style.filterBox}>
 			<span className={style.filterName}>Количество пересадок </span>
-			<div className="ui checkbox">
+			<div className="uiCheckbox">
 				<input
 					type="checkbox"
 					className={style.customCheckbox}
