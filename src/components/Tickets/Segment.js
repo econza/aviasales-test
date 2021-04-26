@@ -4,6 +4,7 @@ import { getHours, getMinutes,  flyDurationHours, flyDurationMinutes, secondsToH
 import style from "./Segment.module.css"
 
 
+
 const Segment = (props) => {
     return (
         <>
